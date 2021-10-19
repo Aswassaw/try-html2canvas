@@ -87,16 +87,19 @@
 
   <script>
     document.querySelector(".container").addEventListener("click", (e) => {
-      if (e.target.className = "download") {
-        const element = e.target.previousElementSibling;
-        console.log(element);
+      if (e.target.className === "download") {
+        const imgName = prompt("Input nama gambar yang akan diunduh: ")
 
-        html2canvas(element).then(function (canvas) {
-          const a = document.createElement("a");
-          a.download = "article-image.jpg";
-          a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-          a.click();
-        })
+        if (imgName) {
+          const element = e.target.previousElementSibling;
+
+          html2canvas(element).then(function (canvas) {
+            const a = document.createElement("a");
+            a.download = imgName + ".jpg";
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.click();
+          })
+        }
       }
     })
   </script>
