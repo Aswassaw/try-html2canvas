@@ -49,36 +49,35 @@
 
 <body>
   <div class="container">
+    <!-- Element pertama -->
     <div class="card">
       <div class="card-title">Article 1</div>
       <div class="card-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint mollitia nesciunt labore quod dolor natus
         dignissimos iste, quasi expedita necessitatibus eaque rem id veniam optio vel architecto nobis, doloribus
-        numquam
-        totam illo. Tempore, deleniti doloribus.
+        numquam totam illo. Tempore, deleniti doloribus.
       </div>
     </div>
     <button class="download">Download as Image</button>
 
+    <!-- Element kedua -->
     <div class="card">
       <div class="card-title">Article 2</div>
       <div class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam adipisci voluptatum provident velit
-        repellendus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam adipisci voluptatum provident velit repellendus
         doloribus beatae quae voluptatem iusto reiciendis.
       </div>
     </div>
     <button class="download">Download as Image</button>
 
+    <!-- Element ketiga -->
     <div class="card">
       <div class="card-title">Article 3</div>
       <div class="card-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, in. Eaque esse voluptatum deserunt ex, sed
         aspernatur dolorum tempore incidunt quam temporibus est atque consequatur sint vero placeat voluptas? Iusto,
-        enim obcaecati est illum ratione a deleniti ipsam totam reprehenderit qui delectus voluptatum quidem ullam
-        nobis
-        voluptatem aut sint rem asperiores deserunt, nulla nihil dolores quia! Repellat ratione officiis, dolor
-        dolorem,
+        enim obcaecati est illum ratione a deleniti ipsam totam reprehenderit qui delectus voluptatum quidem ullam nobis
+        voluptatem aut sint rem asperiores deserunt, nulla nihil dolores quia! Repellat ratione officiis, dolor dolorem,
         aperiam pariatur beatae blanditiis a, voluptatum sed facilis illo!
       </div>
     </div>
@@ -90,7 +89,7 @@
       if (e.target.className === "download") {
         const imgName = prompt("Input nama gambar yang akan diunduh: ")
 
-        if (imgName) {
+        if (imgName.trim()) {
           const element = e.target.previousElementSibling;
 
           html2canvas(element).then(function (canvas) {
